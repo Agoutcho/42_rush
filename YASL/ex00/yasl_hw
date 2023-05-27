@@ -1,0 +1,6 @@
+#!yasl
+#!  // drop arguments
+"World\n"
+"Hello "
+#
+#print

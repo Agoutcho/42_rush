@@ -1,0 +1,25 @@
+#!yasl
+
+// verification si il y a plus d'un arg sinon on quitte
+3
+!=
+? ("Usage : ./yasl_split <separator> <string>" print 1 exit) : !
+
+][
+1
+!=
+? ("<separator> has to be 1 char" print 1 exit)
+
+2
+^
+0:][:1
+
+1:=:0
+
+1:(#(1:=:2 1:!:1)):1
+#(
+2:=:0
+2:!:2
+%!=
+? print : ("\n" print !))
+"\n" print

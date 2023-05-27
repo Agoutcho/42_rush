@@ -1,0 +1,26 @@
+#!yasl
+
+{
+	%@ (2 ^ = print 2 ^ 1 -)
+	!!
+}function
+
+// verification si il y a plus d'un arg sinon on quitte
+3
+<
+? ("Usage : ./yasl_repeat <start_num> <value1> [ <value2> [ ...]]" print 1 exit) : !
+
+// verification si l'arg <start_num> est positif
+0
+%<=
+? ("<start_num> must be strictly positive" print exit 1) : !
+
+0:=:1
+1:eval:1
+!
+
+// string
+// nb
+
+#
+#(1:=:0 function 1:"1":1 1:eval:1 1:+:1 "\n" print)

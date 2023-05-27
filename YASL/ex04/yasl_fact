@@ -1,0 +1,34 @@
+#!yasl
+
+// verification si il y a plus d'un arg sinon on quitte
+2
+!=
+? ("Usage : ./yasl_fact <num>" print 1 exit) : !
+
+// verification si l'arg <num> est positif
+0
+%<
+? ("<num> must be positive" print exit 1) : !
+
+// verification si l'arg <num> est inferieur a l'overflow
+20
+%>
+? ("<num> must under 21" print exit 1) : !
+
+// 0! = 1
+0
+%==
+? (! "0" %== ? (1 print exit 0) : ("<num> must be a number" print exit 1)) : !
+
+// 1! = 1
+1
+%==
+? (1 print exit 0) : !
+
+eval
+0:=:1
+=
+1
+- // on enleve 1 pour ne pas calculer 0 * ...
+#(1:"1":1 1:eval:1 1:-:1 1:=:0 0:*:0)
+print
