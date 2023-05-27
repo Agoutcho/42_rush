@@ -5,10 +5,6 @@
 	!!
 }function
 
-{
-	# #(print " 3\n" print)
-} printt
-
 // verification si il y a plus d'un arg sinon on quitte
 3
 %<

@@ -1,9 +1,0 @@
-#!yasl
-
-#!  // drop arguments
-
-"YASL\n"
-"my name is "
-"Hello, "
-#
-#print
