@@ -5,18 +5,26 @@
 	!!
 }function
 
+{
+	# #(print " 3\n" print)
+} printt
+
 // verification si il y a plus d'un arg sinon on quitte
 3
-<
+%<
 ? ("Usage : ./yasl_repeat <start_num> <value1> [ <value2> [ ...]]" print 1 exit) : !
 
+0:=:1 !! // on enregistre le nb d'arg et on supprime le nom du binaire
 // verification si l'arg <start_num> est positif
 0
 %<=
 ? ("<start_num> must be strictly positive" print exit 1) : !
 
+1:=:0 // on recupere le nb d'arg
+// Verifier si c'est inferieur a l'overflow
+2 -   // soustrait 2 a "argc" car il contient le nom et start_num
+2 ^ eval %+ %> ? ("the program can overflow" print exit 1) : ! 2 ^ !
 0:=:1
-1:eval:1
 !
 
 // string
