@@ -1,0 +1,36 @@
+#!yasl
+
+1
+!=
+? ("No args needed" print 1 exit) : !
+
+read
+0 %== ? ("Empty map \n" print exit 1) : !
+! read
+@(
+    +
+    read
+)
+!
+0:][:1 // split la string dans la stack 1
+1:=:0
+1:(#(1:=:2 1:!:1)):1 // reverse la string dans la stack 2
+0:1
+1:
+(
+    1
+    @(
+        1 + // envoie 1 dans la stack 1
+        (= = *) // duplique 2 fois 1 et multiplie : on a 1 (1*1)
+        0:=:1 // envoie le nb carac dans stack 1 : 1 (1*1) nb 
+        %> // comparaison (1*1) > nb ? 
+        ? (= print " Map not a square \n" print exit 1) 
+        : (
+            == 
+            ? ("Map is a square \n" print 1:=:0 0) : 
+            1)
+    )
+):1
+0:=:2
+
+!!
