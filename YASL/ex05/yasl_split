@@ -23,14 +23,20 @@
 0:=:1 // on enregistre le nombre d'element
 
 %@(
-    2 ^ 
-    2:=:0
-    2:!:2
-    %!=
-    ? (print 2 ^) : (! 1 
-    @(2:=:0 %!= 
-    ?("\n" print ! 0) : (2:!:2 ! 2 ^ 1 - 2 ^ 1)) 
-    2 ^)
+    // pour la comparaison du @ on avait le nb en haut donc on le swap avec le sep
+    2 ^
+    2:=:0 // on recup 1 carac
+    2:!:2 // on le delete
+    %!= // on fait la comp avec le sep
+    ? (print 2 ^) : (
+        ! 1 
+        @(
+            2 ^ = 1 == ? ("\n" print exit 0) : (2 ^) // check si c'est le last
+            2:=:0 %!= 
+            ?("\n" print ! 0) : (2:!:2 ! 2 ^ 1 - 2 ^ 1)
+            ) 
+        2 ^
+        )
     0
     %>
     ? (! 1 -))
