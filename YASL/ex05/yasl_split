@@ -34,10 +34,10 @@
     ? (print 2 ^) : (
         ! 1 
         @(
-            2 ^ = 1 == ? ("\n" print exit 0) : (2 ^) // check si c'est le last
+            2 ^ = 1 == ? (0 3:=:0 != ? ("\n" print) exit 0) : (2 ^) // check si c'est le last
             2:=:0 %!= 
             ?(
-                0:("0" eval):0
+                0
                 3:=:0 // verif du cas special 1er char 
                 != 
                 ?(
@@ -51,4 +51,4 @@
     0
     %>
     ? (! 1 -))
-"\n" print
+0 3:=:0 != ? ("\n" print)
