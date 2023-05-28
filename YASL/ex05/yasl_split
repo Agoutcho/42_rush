@@ -4,7 +4,7 @@
 	# #(print " 3\n" print)
 } p
 
-// verification si il y a plus d'un arg sinon on quitte
+// verification si il y a plus de deux args sinon on quitte
 3
 !=
 ? ("Usage : ./yasl_split <separator> <string>" print 1 exit) : !
@@ -24,7 +24,7 @@
 // on envoie tous les elements dans la stack 2 pour avoir le bon ordre
 1:(#(1:=:2 1:!:1)):1 
 0:=:1 // on enregistre le nombre d'element
-
+3:("0" eval):3 // cas special si le 1er char est le sep
 %@(
     // pour la comparaison du @ on avait le nb en haut donc on le swap avec le sep
     2 ^
@@ -36,17 +36,19 @@
         @(
             2 ^ = 1 == ? ("\n" print exit 0) : (2 ^) // check si c'est le last
             2:=:0 %!= 
-            ?("\n" print ! 0) : (2:!:2 ! 2 ^ 1 - 2 ^ 1)
+            ?(
+                0:("0" eval):0
+                3:=:0 // verif du cas special 1er char 
+                != 
+                ?(
+                    "\n" print
+                ) : (3:("1" eval):3) 
+                ! 0
+                ) : (2:!:2 ! 2 ^ 1 - 2 ^ 1)
             ) 
         2 ^
         )
     0
     %>
     ? (! 1 -))
-
-// %@(
-// 2:=:0
-// 2:!:2
-// %!=
-// ? print : ("\n" print !) 1 -)
 "\n" print
