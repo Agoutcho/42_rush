@@ -29,11 +29,16 @@
 } get_index_b64
 
 {
-    "m \e[48;2;0;0;0m" +
+    2 ^ 3 ^
+    "m  \e[48;2;0;0;0m" +
     ";" 2 ^ + +
     ";" 2 ^ + +
     "\e[48;2;" 2 ^ +
 }   create_color_string
+
+102
+51
+1
 
 {
     // Calculate combinaison
@@ -94,11 +99,9 @@
     4:2
     2:#(
         get_index_b64
-        2:=:6
+        2:=:7
         2:!!:2
     ):2
-    6:#:6
-    6:(#(6:=:7 6:!:6)):6
     get_rgb
 } put_pixel_color
 
@@ -116,8 +119,9 @@ read
 !
 0:][:1 // split la string dans la stack 1
 1:=:0
+4:0
+0:/:0
 1:(#(1:=:2 1:!:1)):1 // reverse la string dans la stack 2
-// 2:(# #print):2
 0:1
 1:
 (
@@ -129,7 +133,7 @@ read
         %> // comparaison (1*1) > nb ? 
         ? (= print " Map not a square \n" print 1 exit) 
         : (
-            == 
+            ==
             ? ("Map is a square \n" print 1:=:0 0) : 
             1)
     )
