@@ -3,27 +3,32 @@
 // verification si il y a plus d'un arg sinon on quitte
 2
 !=
-? ("Usage : ./yasl_fact <num>" print 1 exit) : !
+? ("Usage : ./yasl_fact <num>\n" print 1 exit) : !
+
+0:=:2
+2:(][):2
+2:( @( = "0" < ? ("Not a number\n" print 1 exit) : (= "9" > ? ("Not a number\n" print 1 exit)) ! # )):2
+
 
 // verification si l'arg <num> est positif
 0
 %<
-? ("<num> must be positive" print exit 1) : !
+? ("<num> must be positive\n" print exit 1) : !
 
 // verification si l'arg <num> est inferieur a l'overflow
 20
 %>
-? ("<num> must under 21" print exit 1) : !
+? ("<num> must under 21\n" print exit 1) : !
 
 // 0! = 1
 0
 %==
-? (! "0" %== ? (1 print exit 0) : ("<num> must be a number" print exit 1)) : !
+? (! "0" %== ? (1 print "\n" print exit 0) : ("<num> must be a number\n" print exit 1)) : !
 
 // 1! = 1
 1
 %==
-? (1 print exit 0) : !
+? (1 print "\n" print exit 0) : !
 
 eval
 0:=:1
@@ -32,3 +37,4 @@ eval
 - // on enleve 1 pour ne pas calculer 0 * ...
 #(1:"1":1 1:eval:1 1:-:1 1:=:0 0:*:0)
 print
+"\n" print
