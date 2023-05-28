@@ -1,0 +1,54 @@
+#!yasl
+
+{
+	# #(print " 3\n" print)
+} p
+
+// verification si il y a plus de deux args sinon on quitte
+3
+!=
+? ("Usage : ./yasl_split <separator> <string>" print 1 exit) : !
+
+// verification si le separator est bien 1 seul char
+][
+1
+!=
+? ("<separator> has to be 1 char" print 1 exit)
+
+2 ^
+0:][:1 // split de la string
+// verification si la string n'est pas nulle
+1:(= 0 == ? ("<string> can't be null" print 1 exit)):1
+
+1:=:0 // on recupere le nombre d'element cree
+// on envoie tous les elements dans la stack 2 pour avoir le bon ordre
+1:(#(1:=:2 1:!:1)):1 
+0:=:1 // on enregistre le nombre d'element
+3:("0" eval):3 // cas special si le 1er char est le sep
+%@(
+    // pour la comparaison du @ on avait le nb en haut donc on le swap avec le sep
+    2 ^
+    2:=:0 // on recup 1 carac
+    2:!:2 // on le delete
+    %!= // on fait la comp avec le sep
+    ? (print 2 ^) : (
+        ! 1 
+        @(
+            2 ^ = 1 == ? ("\n" print exit 0) : (2 ^) // check si c'est le last
+            2:=:0 %!= 
+            ?(
+                0:("0" eval):0
+                3:=:0 // verif du cas special 1er char 
+                != 
+                ?(
+                    "\n" print
+                ) : (3:("1" eval):3) 
+                ! 0
+                ) : (2:!:2 ! 2 ^ 1 - 2 ^ 1)
+            ) 
+        2 ^
+        )
+    0
+    %>
+    ? (! 1 -))
+"\n" print
