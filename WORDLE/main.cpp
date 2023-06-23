@@ -25,6 +25,7 @@ int main () {
 	vector<string>				all_words;
 	vector<string>::iterator	it;
 	string						line;
+	string						w_of_day;
 	
 	
 	// check si fail
@@ -39,6 +40,7 @@ int main () {
 		all_words.insert(it, line);
 	}
 	cout << "Total words available: " << all_words.size() << endl;
+	w_of_day = word_of_day(all_words);
 	cout << "You are looking for: " << word_of_day(all_words) << endl;
 	line.clear();
 	cout << "Enter your word :" << endl;
@@ -48,7 +50,7 @@ int main () {
 		cout << "WTF ?!!" << endl;
 		return (0);
 	}
-	if (is_line_in_words(all_words, line))
+	if (is_line_in_words(all_words, line) && !w_of_day.compare(line))
 		cout << "Nice !" << endl;
 	return 0;
 }
