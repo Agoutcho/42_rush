@@ -151,7 +151,7 @@ read
         (= = *) // duplique 2 fois 1 et multiplie : on a 1 (1*1)
         0:=:1 // envoie le nb carac dans stack 1 : 1 (1*1) nb 
         %> // comparaison (1*1) > nb ? 
-        ? ("Map not a square \n" print 1 exit) 
+        ? ("Map not a square \n" print 0) 
         : (
             ==
             ? (1:=:0 0) : 
