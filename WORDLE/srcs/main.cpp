@@ -1,6 +1,7 @@
 #include "Parser.h"
 
 #define FILENAME "words.txt"
+#define	LIVES	6
 
 using namespace std;
 
@@ -15,8 +16,9 @@ bool	is_line_in_words(vector<string>	all_words, std::string line)
 }
 
 int main (int argc, char **argv) {
-	ifstream					file(FILENAME);
-	string						line;
+	ifstream	file(FILENAME);
+	string		line;
+	int			playerLives = LIVES;
 
 	(void)argv;
 	if (argc != 1)
@@ -34,15 +36,27 @@ int main (int argc, char **argv) {
 		return (EXIT_FAILURE);
 	cout << "Total words available: " << fs.getSize() << endl;
 	cout << "You are looking for: " << fs.wordOfDay << endl;
-	line.clear();
-	// cout << "Enter your word :" << endl;
-	// cin >> line;
-	// if (line.size() != 5)
-	// {
-	// 	cout << "WTF ?!!" << endl;
-	// 	return (0);
-	// }
-	// if (is_line_in_words(fs.words, line) && !fs.wordOfDay.compare(line))
-	// 	cout << "Nice !" << endl;
-	return 0;
+	while (playerLives > 0)
+	{
+		// print the keyboard
+		line.clear();
+		cout << "Live left : \033[1;31m" << playerLives << "\033[0m" << std::endl;
+		cout << "Enter your word :" << endl;
+		cin >> line;
+		if (line.empty())
+			return (0);
+		std::cout << "\033M\033[2K\r";
+		std::cout << "\033M\033[2K\r";
+		if (!fs.manageWordError(line))
+			continue ;
+		fs.computeWord(line);
+		if (!fs.wordOfDay.compare(line))
+		{
+			std::cout << "Congrats you find the word !" << std::endl;
+			return (0);
+		}
+		playerLives--;
+	}
+	std::cout << "Loser." << std::endl;
+	return (0);
 }

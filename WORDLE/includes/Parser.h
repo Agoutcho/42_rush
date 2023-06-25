@@ -7,6 +7,7 @@
 #include <vector>
 #include <ctime>
 #include <regex>
+#include <map>
 
 class Parser
 {
@@ -15,6 +16,7 @@ private:
 	uint64_t					lineCounter;
 	uint64_t					wordSize;
 	std::regex					regexLowCase;
+	bool			isValidWord(std::string line);
 public:
 	std::vector<std::string>	words;
 	std::string		wordOfDay;
@@ -24,6 +26,8 @@ public:
 	bool			setWordOfDay();
 	bool			parseWords();
 	size_t			getSize();
+	bool			manageWordError(std::string line);
+	void			computeWord(std::string line);
 };
 
 
