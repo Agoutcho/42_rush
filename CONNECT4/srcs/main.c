@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	{
 		if (check_win(&data))
 			break ;
-		if (data.active_ia)
+		if (data.active_ia && data.player == PLAYER2)
 			launch_ia(&data);
 		else
 			launch_player(&data);

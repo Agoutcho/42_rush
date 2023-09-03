@@ -2,7 +2,29 @@
 
 void launch_ia(t_data *data)
 {
-    data->stop = 1;
+	int column;
+
+	while(1)
+	{
+		if (data->player == PLAYER1)
+		{
+			ft_putstr_fd("Error: IA failed\n", 2);
+			free_exit(data);
+		}
+		column = rand() % data->cell_width;
+		for (int i = data->cell_height - 1; i >= 0; i--)
+		{
+			int test = data->cell_grid[i][column].type;
+			if (data->cell_grid[i][column].type == NONE)
+			{
+				data->cell_grid[i][column].type = data->player;
+				data->player = (data->player + 2) % 2 + 1;
+				return ;
+			}
+			if (i == 0 && (test - data->cell_grid[i][column].type) == 0)
+				ft_putstr("Column is full\n");
+		}
+	}
 }
 
 void launch_player(t_data *data)
