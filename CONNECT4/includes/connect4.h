@@ -7,11 +7,19 @@
 #include <time.h>
 //    time_t time(time_t *tloc);
 
-#include "debug.h"
 #include "../libft/include/libft.h"
 
 #define REDBG "\033[0;41m"
 #define YELLOWBG "\033[0;43m"
+# define BLACK_P  "\033[0;30m"
+# define RED_P    "\033[0;31m"
+# define GREEN_P  "\033[0;32m"
+# define YELLOW_P "\033[0;33m"
+# define BLUE_P   "\033[0;34m"
+# define PURPLE_P "\033[0;35m"
+# define CYAN_P   "\033[0;36m"
+# define WHITE_P  "\033[0;37m"
+# define RESET_P  "\033[0m"
 
 #define MAXGRIDHEIGHT 50
 #define MINGRIDHEIGHT 6
