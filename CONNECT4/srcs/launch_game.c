@@ -3,6 +3,7 @@
 void launch_ia(t_data *data)
 {
 	int column;
+	t_cell *cell_temp;
 
 	while(1)
 	{
@@ -22,7 +23,10 @@ void launch_ia(t_data *data)
 				return ;
 			}
 			if (i == 0 && (test - data->cell_grid[i][column].type) == 0)
-				ft_putstr("Column is full\n");
+			{
+				column = rand() % data->cell_width;
+				i = data->cell_height - 1;
+			}
 		}
 	}
 }
