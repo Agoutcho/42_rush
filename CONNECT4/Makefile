@@ -22,6 +22,8 @@ SRCS_FILES			=	\
 						free.c \
 						init_data.c \
 						is_bot_active.c \
+						is_input_column_valid.c \
+						launch_game.c \
 						parse_grid_size.c \
 						print_grid.c 
 
