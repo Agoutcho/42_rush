@@ -50,6 +50,7 @@ typedef struct s_data
 }t_data;
 
 int			check_win(t_data *data);
+int			check_win_ia(t_data *data);
 void		free_exit(t_data *data);
 void		init_data(t_data *data);
 int			is_bot_active();

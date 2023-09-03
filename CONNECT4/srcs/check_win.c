@@ -157,3 +157,16 @@ int check_win(t_data *data)
     }
     return (data->stop);
 }
+
+int check_win_ia(t_data *data)
+{
+    if (check_draw(data))
+        return (1);
+    if (check_width_win(data))
+        return (1);
+    if (check_height_win(data))
+        return (1);
+    if (check_diag_win(data) || check_reverse_diag_win(data))
+        return (1);
+    return (0);
+}

@@ -2,9 +2,6 @@
 
 void launch_ia(t_data *data)
 {
-	int column;
-	t_cell *cell_temp;
-
 	while(1)
 	{
 		if (data->player == PLAYER1)
@@ -12,7 +9,46 @@ void launch_ia(t_data *data)
 			ft_putstr_fd("Error: IA failed\n", 2);
 			free_exit(data);
 		}
-		column = rand() % data->cell_width;
+		for (size_t column = 0; column < data->cell_width; column++)
+		{
+			for (int i = data->cell_height - 1; i >= 0; i--)
+			{
+				if (data->cell_grid[i][column].type == NONE)
+				{
+					data->cell_grid[i][column].type = data->player;
+					if (check_win_ia(data))
+					{
+						data->player = (data->player + 2) % 2 + 1;
+						return ;
+					}
+					data->cell_grid[i][column].type = NONE;
+					break ;
+				}
+				if (i == 0)
+					break ;
+			}
+		}
+		for (size_t column = 0; column < data->cell_width; column++)
+		{
+			for (int i = data->cell_height - 1; i >= 0; i--)
+			{
+				if (data->cell_grid[i][column].type == NONE)
+				{
+					data->cell_grid[i][column].type = PLAYER1;
+					if (check_win_ia(data))
+					{
+						data->cell_grid[i][column].type = data->player;
+						data->player = (data->player + 2) % 2 + 1;
+						return ;
+					}
+					data->cell_grid[i][column].type = NONE;
+					break ;
+				}
+				if (i == 0)
+					break ;
+			}
+		}
+		int column = rand() % data->cell_width;
 		for (int i = data->cell_height - 1; i >= 0; i--)
 		{
 			int test = data->cell_grid[i][column].type;
