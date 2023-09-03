@@ -18,168 +18,9 @@ RM					=	rm -rf
 NO_PRINT_DIR		=	--no-print-directory
 
 SRCS_FILES			=	\
-						color/rgb.c\
-						color/rgb_int.c\
-						color/rgb_to_int.c\
-						color/rgb_clamp.c\
-						color/rgb_add.c\
-						color/rgb_subtract.c\
-						color/rgb_multiply.c\
-						color/rgb_scale.c\
-						color/rgb_mix.c\
-						\
-						vec3/vec3.c\
-						vec3/vec3_add.c\
-						vec3/vec3_subtract.c\
-						vec3/vec3_multiply.c\
-						vec3/vec3_scale.c\
-						vec3/vec3_cross.c\
-						vec3/vec3_normalize.c\
-						vec3/vec3_reflect.c\
-						vec3/vec3_dot.c\
-						vec3/vec3_length.c\
-						vec3/vec3_length_squared.c\
-						vec3/vec3_equals.c\
-						vec3/quat.c\
-						vec3/quat_identity.c\
-						vec3/quat_from_vec3.c\
-						vec3/quat_multiply.c\
-						vec3/quat_from_axis_angle.c\
-						vec3/quat_invert.c\
-						vec3/mat4_zero.c\
-						vec3/mat4_identity.c\
-						vec3/mat4_translate.c\
-						vec3/mat4_scale.c\
-						vec3/mat4_rotate_x.c\
-						vec3/mat4_rotate_y.c\
-						vec3/mat4_rotate_z.c\
-						vec3/mat4_rotate_axis.c\
-						vec3/mat4_multiply.c\
-						vec3/mat4_from_quat.c\
-						vec3/mat4_multiply_vec3.c\
-						vec3/mat4_multiply_axis.c\
-						vec3/mat4_transpose.c\
-						vec3/mat4_cofactor.c\
-						vec3/mat4_invert.c\
-						\
-						px/px.c\
-						px/line.c\
-						px/disc.c\
-						px/rect.c\
-						\
-						px_draw/rt_draw_px.c\
-						px_draw/rt_draw_line.c\
-						px_draw/rt_draw_disc.c\
-						px_draw/rt_draw_rect.c\
-						px_draw/rt_draw_cs.c\
-						\
-						utils/rt_init.c\
-						utils/rt_delete.c\
-						utils/rt_delete_obj_lst.c\
-						utils/rt_error.c\
-						utils/rt_exit.c\
-						utils/rt_error_exit.c\
-						utils/rt_strs_len.c\
-						utils/rt_set_fps.c\
-						utils/rt_ftoa.c\
-						utils/px_to_vec3.c\
-						utils/vec3_to_px.c\
-						utils/tf_to_mat4.c\
-						\
-						parse/rt_parse_uint.c\
-						parse/rt_parse_rgb.c\
-						parse/rt_parse_float.c\
-						parse/rt_parse_vec3.c\
-						parse/rt_parse_texture.c\
-						parse/rt_parse_material.c\
-						parse/rt_parse_input.c\
-						parse/rt_parse_line.c\
-						parse/rt_parse_ambient_light.c\
-						parse/rt_parse_camera.c\
-						parse/rt_parse_light.c\
-						parse/rt_parse_obj_plane.c\
-						parse/rt_parse_obj_sphere.c\
-						parse/rt_parse_obj_cylinder.c\
-						parse/rt_parse_obj_cone.c\
-						parse/rt_parse_line_error_exit.c\
-						parse/rt_parse_value_error_exit.c\
-						parse/rt_parse_texture_error_exit.c\
-						parse/rt_parse.c\
-						\
-						viewer/rt_viewer_start.c\
-						viewer/rt_viewer_destroy.c\
-						viewer/rt_viewer_hooks.c\
-						viewer/rt_viewer_on_close.c\
-						viewer/rt_viewer_on_mouse_events.c\
-						viewer/rt_viewer_on_key_events.c\
-						viewer/rt_viewer_render_frame.c\
-						viewer/rt_viewer_get_pixel.c\
-						viewer/rt_viewer_set_pixel.c\
-						viewer/rt_viewer_thread_handler.c\
-						\
-						events/rt_on_click.c\
-						events/rt_on_mouse_move.c\
-						events/rt_on_scroll.c\
-						events/rt_on_drag.c\
-						events/rt_on_right_drag.c\
-						events/rt_on_drag_cs_helper.c\
-						\
-						help/rt_help_label.c\
-						help/rt_help_value.c\
-						help/rt_help_info.c\
-						help/rt_help_obj.c\
-						help/rt_help.c\
-						\
-						raytracer/rt_get_view_ray.c\
-						raytracer/rt_lowres_estimate_size.c\
-						raytracer/rt_lowres_draw_step.c\
-						raytracer/rt_draw_frame.c\
-						raytracer/rt_hit_default.c\
-						raytracer/rt_get_plane_hit.c\
-						raytracer/rt_get_sphere_hit.c\
-						raytracer/rt_get_disc_hit_dist.c\
-						raytracer/rt_get_cylinder_body_hit_dist.c\
-						raytracer/rt_get_cylinder_hit.c\
-						raytracer/rt_get_cone_body_hit_dist.c\
-						raytracer/rt_get_cone_hit.c\
-						raytracer/rt_get_obj_hit.c\
-						raytracer/rt_get_closest_hit.c\
-						raytracer/rt_phong_color.c\
-						raytracer/rt_get_hit_color.c\
-						\
-						camera/rt_cam_utils.c\
-						camera/rt_cam_to_world.c\
-						camera/rt_cam_to_world_translate.c\
-						camera/rt_cam_to_world_rotate.c\
-						camera/rt_cam_ndc_to_camera_space.c\
-						camera/rt_cam_update_fov.c\
-						camera/rt_cam_update_c2w.c\
-						camera/rt_cam_camera_space_to_ndc.c\
-						camera/rt_cam_c2s.c\
-						camera/rt_cam_w2s.c\
-						\
-						obj/rt_get_sphere_transformations.c\
-						obj/rt_get_plane_transformations.c\
-						obj/rt_get_cylinder_transformations.c\
-						obj/rt_get_cone_transformations.c\
-						obj/rt_get_transformed_sphere.c\
-						obj/rt_get_transformed_plane.c\
-						obj/rt_get_transformed_cylinder.c\
-						obj/rt_get_transformed_cone.c\
-						obj/rt_cs_helper_axis_in_obj.c\
-						obj/rt_cs_helper_axis_in_cam.c\
-						\
-						ui/rt_ui_help_bg.c\
-						ui/rt_ui_frame_progress.c\
-						ui/rt_ui_bounding_box.c\
-						ui/rt_ui_selected.c\
-						\
-						texture/rt_get_chess_color.c\
-						texture/rt_get_tex_pixel.c\
-						\
 						main.c\
 
-SRCS_DIR			=	./src
+SRCS_DIR			=	./srcs
 SRCS				=	$(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
 
 OBJS_FILES			=	$(SRCS_FILES:.c=.o)
@@ -188,8 +29,8 @@ OBJS_DIR			=	./obj
 OBJS				=	$(addprefix $(OBJS_DIR)/, $(OBJS_FILES))
 DEPS				=	$(addprefix $(OBJS_DIR)/,$(DEPS_FILES))
 
-HEADER_DIR			=	./include
-HEADER_FILES		=	key_linux.h rgb.h vec3.h scene.h minirt.h
+HEADER_DIR			=	./includes
+HEADER_FILES		=	connect4.h
 HEADER				=	$(addprefix $(HEADER_DIR)/, $(HEADER_FILES))
 HEADER_INC			=	-I $(HEADER_DIR)
 
@@ -204,12 +45,12 @@ all:				libft $(NAME)
 $(OBJS_DIR)/%.o:	$(SRCS_DIR)/%.c $(FT)
 					@mkdir -p $(@D)	
 					@printf "$(CYAN)[Compiling]$(RESET) $<\n"
-					@$(CC) $(CFLAGS) $(FT_INC) -c $< -o $@
+					@$(CC) $(CFLAGS) $(FT_INC) $(HEADER_INC) -c $< -o $@
 
 $(NAME):			$(OBJS) $(FT)
 					@printf "$(YELLOW)[Linking]  $(RESET) %s\n" $@
 					@$(CC) $(CFLAGS) $(OBJS) $(FT_FLAGS) -o $(NAME)
-					@echo "$(GREEN_BOLD)✓ miniRT is ready!$(RESET)"
+					@echo "$(GREEN_BOLD)✓ $(NAME) is ready!$(RESET)"
 
 .PHONY: libft
 libft:

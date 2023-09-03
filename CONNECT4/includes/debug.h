@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   debug.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atchougo <atchougo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: atchougo <atchougo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:55:14 by atchougo          #+#    #+#             */
-/*   Updated: 2023/06/09 17:05:50 by atchougo         ###   ########.fr       */
+/*   Updated: 2023/09/03 15:34:40 by atchougo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define WHITE_P  "\033[0;37m"
 # define RESET_P  "\033[0m"
 # define DELETE_P printf("\033M\033[2K");
+# include <stdio.h>
 
 # define DEBUG(x, ...) printf(CYAN_P"[%s]"GREEN_P"[%s:%d] "YELLOW_P x RESET_P"\n",\
 							__FILE__, __FUNCTION__ ,__LINE__, ##__VA_ARGS__);
