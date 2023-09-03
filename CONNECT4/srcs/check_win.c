@@ -131,19 +131,28 @@ int check_win(t_data *data)
     if (check_width_win(data))
     {
         data->player = (data->player + 2) % 2 + 1;
-        ft_printf("Player %d won.\n", data->player);
+        if (data->player == PLAYER1)
+			ft_printf(RED_P"Player %d"RESET_P" won.\n", data->player);
+		else
+			ft_printf(YELLOW_P"Player %d"RESET_P" won.\n", data->player);
         return (!data->stop);
     }
     if (check_height_win(data))
     {
         data->player = (data->player + 2) % 2 + 1;
-        ft_printf("Player %d won.\n", data->player);
+        if (data->player == PLAYER1)
+			ft_printf(RED_P"Player %d"RESET_P" won.\n", data->player);
+		else
+			ft_printf(YELLOW_P"Player %d"RESET_P" won.\n", data->player);
         return (!data->stop);
     }
     if (check_diag_win(data) || check_reverse_diag_win(data))
     {
         data->player = (data->player + 2) % 2 + 1;
-        ft_printf("Player %d won.\n", data->player);
+        if (data->player == PLAYER1)
+			ft_printf(RED_P"Player %d"RESET_P" won.\n", data->player);
+		else
+			ft_printf(YELLOW_P"Player %d"RESET_P" won.\n", data->player);
         return (!data->stop);
     }
     return (data->stop);

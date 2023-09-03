@@ -33,8 +33,16 @@ static void print_cell(t_cell cell)
 		ft_putstr("_");
 }
 
-void print_grid(t_data *data)
+static void delete_last_grid(t_data *data)
 {
+	for(size_t i = 0;i <= data->cell_height;i++)
+		ft_putstr("\033M\033[2K");
+}
+
+void print_grid(t_data *data, int flag)
+{
+	if (flag)
+		delete_last_grid(data);
     print_first_line(data);
 	for (size_t i = 0; i < data->cell_height; i++)
 	{

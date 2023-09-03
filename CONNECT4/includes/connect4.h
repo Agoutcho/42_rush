@@ -49,6 +49,6 @@ int			is_input_column_valid(t_data *data, char *str);
 void		launch_ia(t_data *data);
 void		launch_player(t_data *data);
 void		parse_grid_size(t_data *data, int argc, char **argv);
-void		print_grid(t_data *data);
+void		print_grid(t_data *data, int flag);
 
 #endif /* CONNECT4_H */

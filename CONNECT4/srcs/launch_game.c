@@ -12,7 +12,10 @@ void launch_player(t_data *data)
 	ft_printf("\n");
 	while (1)
 	{
-		ft_printf("Player %d entrer une colonne : ", data->player);
+		if (data->player == PLAYER1)
+			ft_printf(RED_P"Player %d"RESET_P" entrer une colonne : ", data->player);
+		else
+			ft_printf(YELLOW_P"Player %d"RESET_P" entrer une colonne : ", data->player);
 		str = ft_gnl(0);
 		if (!str)
 		{

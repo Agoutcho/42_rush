@@ -10,15 +10,16 @@ int main(int argc, char **argv)
 	parse_grid_size(&data, argc, argv);
 	data.active_ia = is_bot_active();
 	data.player = rand() % 2 + 1;
+	print_grid(&data, 0);
 	while (!data.stop)
 	{
-		print_grid(&data);
 		if (check_win(&data))
 			break ;
 		if (data.active_ia)
 			launch_ia(&data);
 		else
 			launch_player(&data);
+		print_grid(&data, 1);
 	}
 	free_exit(&data);
 }
