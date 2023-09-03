@@ -7,6 +7,17 @@
 #include <time.h>
 //    time_t time(time_t *tloc);
 
+#include "debug.h"
+#include "../libft/include/libft.h"
+
+#define REDBG "\033[0;41m"
+#define YELLOWBG "\033[0;43m"
+
+#define MAXGRIDHEIGHT 50
+#define MINGRIDHEIGHT 6
+#define MAXGRIDWIDTH 50
+#define MINGRIDWIDTH 7
+
 typedef enum e_cell_type
 {
 	NONE,
@@ -24,9 +35,16 @@ typedef struct s_data
 {
 	t_cell		**cell_grid;
 	size_t		cell_height;
-	size_t		cell_weight;
+	size_t		cell_width;
 	t_cell_type	player;
+	int			active_ia;
 }t_data;
+
+void		free_exit(t_data *data);
+void		init_data(t_data *data);
+int			is_bot_active();
+void		parse_grid_size(t_data *data, int argc, char **argv);
+void		print_grid(t_data *data);
 
 
 #endif /* CONNECT4_H */

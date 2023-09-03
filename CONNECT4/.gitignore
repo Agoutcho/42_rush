@@ -1,4 +1,5 @@
 *.d
 *.o
+*.a
 connect4
 a.out

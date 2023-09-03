@@ -18,7 +18,13 @@ RM					=	rm -rf
 NO_PRINT_DIR		=	--no-print-directory
 
 SRCS_FILES			=	\
-						main.c\
+						main.c \
+						free.c \
+						init_data.c \
+						is_bot_active.c \
+						parse_grid_size.c \
+						print_grid.c 
+
 
 SRCS_DIR			=	./srcs
 SRCS				=	$(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
