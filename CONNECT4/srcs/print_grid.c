@@ -20,17 +20,17 @@ static void print_cell(t_cell cell)
 	if (cell.type == PLAYER1)
 	{
 		ft_putstr(REDBG);
-		ft_putstr(" ");
+		ft_putstr("_");
 		ft_putstr(RESET_P);
 	}
 	else if (cell.type == PLAYER2)
 	{
 		ft_putstr(YELLOWBG);
-		ft_putstr(" ");
+		ft_putstr("_");
 		ft_putstr(RESET_P);
 	}
 	else
-		ft_putstr("o");
+		ft_putstr("_");
 }
 
 void print_grid(t_data *data)

@@ -13,12 +13,13 @@ ERASE				=	\033[2K\033[1A\r
 NAME				=	connect4
 
 CC					=	cc
-CFLAGS				=	-Wall -Wextra -Werror -MD
+CFLAGS				=	-Wall -Wextra -Werror -MD -g3
 RM					=	rm -rf
 NO_PRINT_DIR		=	--no-print-directory
 
 SRCS_FILES			=	\
 						main.c \
+						check_win.c \
 						free.c \
 						init_data.c \
 						is_bot_active.c \

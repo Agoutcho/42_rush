@@ -13,6 +13,8 @@ int main(int argc, char **argv)
 	while (!data.stop)
 	{
 		print_grid(&data);
+		if (check_win(&data))
+			break ;
 		if (data.active_ia)
 			launch_ia(&data);
 		else
