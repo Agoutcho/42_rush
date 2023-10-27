@@ -17,3 +17,4 @@ MFA files come from **Multimedia Fusion 2** by **Clickteam** appication.
 Multimedia Fusion 2 is a tool that permit to create quick games for Flash or HTML5. 
 
 https://www.clickteam.com/tutorials
+[Other .mfa examples www.castles-of-britain.com](http://www.castles-of-britain.com/mmfexamples-a.htm)
