@@ -16,5 +16,8 @@ By retro-engineering some MFA files we need to create a program in C that displa
 MFA files come from **Multimedia Fusion 2** by **Clickteam** appication.
 Multimedia Fusion 2 is a tool that permit to create quick games for Flash or HTML5. 
 
+https://clickwiki.github.io/file-extensions/MFA/
 https://www.clickteam.com/tutorials
 [Other .mfa examples www.castles-of-britain.com](http://www.castles-of-britain.com/mmfexamples-a.htm)
+
+Using Hexedit for a better hexdump : [Hexedit Manuel](https://linux.die.net/man/1/hexedit)
