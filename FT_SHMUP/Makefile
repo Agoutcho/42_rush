@@ -8,7 +8,7 @@ GREEN_BOLD	= \033[1;32m
 NAME		:=	ft_shmup
 
 CC			:=	c++
-CFLAGS		:=	-g3 #-Wall -Wextra -Werror
+CFLAGS		:=	-g3 -Wall -Wextra -Werror
 
 OBJ_FOLDER	:=	objs
 SRC_FOLDER	:=	srcs
@@ -21,6 +21,8 @@ HEADERFILE	:=	includes/ft_shmup.h \
 				includes/Ship.h
 
 SRCS		:=	main.cpp \
+				Bullet.cpp \
+				GameBoard.cpp \
 				resetTerminal.cpp \
 				Ship.cpp
 
