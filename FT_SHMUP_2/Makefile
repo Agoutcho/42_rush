@@ -18,7 +18,15 @@ RM					=	rm -rf
 NO_PRINT_DIR		=	--no-print-directory
 
 SRCS_FILES			=	\
+						check_collisions.c \
+						display_features_2nd_window.c \
+						entities.c \
+						init.c \
 						main.c \
+						particles.c \
+						render.c \
+						windows_handling.c \
+						game_state.c \
 
 
 SRCS_DIR			=	./srcs
@@ -35,12 +43,7 @@ HEADER_FILES		=	ft_shmup.h
 HEADER				=	$(addprefix $(HEADER_DIR)/, $(HEADER_FILES))
 HEADER_INC			=	-I $(HEADER_DIR)
 
-NCURSES				=	-lncurses
-
-FT_DIR				=	./libft
-FT					=	$(FT_DIR)/libft.a
-FT_INC				=	-I $(FT_DIR)/include
-FT_FLAGS			=	-L $(FT_DIR) -l ft
+NCURSES				=	-lncursesw
 
 .PHONY: all
 all:				$(NAME)
