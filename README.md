@@ -21,3 +21,28 @@ https://www.clickteam.com/tutorials
 [Other .mfa examples www.castles-of-britain.com](http://www.castles-of-britain.com/mmfexamples-a.htm)
 
 Using Hexedit for a better hexdump : [Hexedit Manuel](https://linux.die.net/man/1/hexedit)
+
+## Ft_Shmup
+The goal of this project is to implement a simplistic shoot-em-up-style game in your terminal like Gradius, R-Type.
+Using ascii and ncurses library.
+
+The game is implemented in C with ncurses.
+
+#### Subject :
+
+[ft_shmup_en.subject.pdf](https://github.com/user-attachments/files/17895566/ft_shmup_en.subject.pdf)
+
+#### Doc :
+
+[Start with ncurses developpez.com](https://arnaud-feltz.developpez.com/tutoriels/ncurses/?page=premier_pas)
+
+[ncurses examples in C](https://www.paulgriffiths.net/program/c/curses.php)
+
+[GNU ncurses](https://invisible-island.net/ncurses/announce.html#h2-other-stuff)
+
+### Linux Ubuntu :
+- install ncurses  `sudo apt-get install libncurses6 libncursesw6`
+- launch with make `make && ./ft_shmup`
+
+
+https://github.com/user-attachments/assets/0c77644a-cd27-4bb6-a767-2c2bd5c46004
